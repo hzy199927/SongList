@@ -28,23 +28,42 @@ axios.interceptors.response.use(function (response) {
   })
 
 // 统一接口写法
-const http = {
-    get(url, data, config){
-        return instance.get(url, {... config, params: data})},
-    post(url, data, config){
-        return instance.post(url, data, config)
-    },
-    post(url, data, config){
-        return instance.post(url, data, config)
-    },
-    put(url, data, config){
-        return instance.put(url, data, config)
-    },
-    patch(url, data, config){
-        return instance.patch(url, data, config)
-    },
-    delete (url, data, config){
-        return instance.delete (url, {...config, data})
-    },
+// const http = {
+//     get(url, data, config){
+//         return instance.get(url, {... config, params: data})},
+//     post(url, data, config){
+//         return instance.post(url, data, config)
+//     },
+//     post(url, data, config){
+//         return instance.post(url, data, config)
+//     },
+//     put(url, data, config){
+//         return instance.put(url, data, config)
+//     },
+//     patch(url, data, config){
+//         return instance.patch(url, data, config)
+//     },
+//     delete (url, data, config){
+//         return instance.delete (url, {...config, data})
+//     },
     
-}
+// }
+
+
+const http = {
+  get(url, data, config){
+    return instance.get(url, { ...config, params:data })
+  },
+  post(url,data, confi){
+    return instance.post(url, data, confi)
+  },
+  patch(url, data, config){
+    return instance.patch(url, data, config)
+  },
+  put(url, data, config){
+    return instance.put(url, data, config)
+  },
+  delete(url, data, config){
+    return instance.delete(url,{...config, data})
+  }
+} 

@@ -1,6 +1,7 @@
 <template>
-  
-    find
+    <div>
+     thecharts
+    </div>
 </template>
 
 <script setup>

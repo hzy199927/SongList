@@ -3,20 +3,19 @@ import { createRouter, createWebHistory } from 'vue-router'
 // import { useUsersStore } from '../stores/users'
 
 const Index = ( ) => import('@/views/Index.vue')
-const Find = ( ) => import('@/views/Find.vue')
+const Find = ( ) => import('@/views/find/Find.vue')
 const Like = ( ) => import('@/views/Like.vue')
 const Video = ( ) => import('@/views/Video.vue')
 const Login = ( ) => import('@/views/Login.vue')
-
+const List = () => import ('@/views/find/content/List.vue')
+const Recommend = () => import ('@/views/find/content/Recommend.vue')
+const Singer = ( ) => import ('@/views/find/content/Singer.vue')
+const TheCharts = () => import ('@/views/find/content/TheCharts.vue')
 
 const router =createRouter ({
   history:createWebHistory(import.meta.env.BASE_URL),
   routes:[
-    {
-      path:'/',
-      name:'index',
-      component:Index,
-    },
+   
     {
       path:'/like',
       name:'like',
@@ -28,9 +27,46 @@ const router =createRouter ({
       component:Login,
     },
     {
-      path:'/find',
+      path:'/',
       name: 'find',
       component:Find,
+      redirect : '/find/recommend',
+      children : [
+        {
+          path : '/find/list',
+          name : 'findList',
+          component:List,
+        
+        },
+        {
+          path : '/find/recommend',
+          name : 'findRecommend',
+          component:Recommend,
+          meta : {
+            breadcrumbs : ['个性推荐']
+          }
+        },
+        {
+          path : '/find/singer',
+          name : 'findSinger',
+          component:Singer,
+          meta : {
+            breadcrumbs : ['歌手']
+          }
+        },
+        {
+          path : '/find/thecharts',
+          name : 'findTheCharts',
+          component:TheCharts,
+          meta : {
+            breadcrumbs : ['排行榜']
+          }
+        },
+        // { 
+        //   path: '/:pathMatch(.*)*', 
+        //   redirect: '/' 
+        // }
+      ]
     },
     {
       path:'/video',

@@ -5,7 +5,7 @@
 
             <div class="music-header-all">
                 <div class="music-header-img">
-                    <img src="../img/logo.png" alt="">
+                    <img src="./img/logo.png" alt="">
                 </div>
                 <div class="music-header-two">
                     <el-button icon="ArrowLeft" circle />
@@ -23,7 +23,7 @@
 
                 <div class="music-header-login">
                     <div v-if="!loginState">
-                        <img @click="loginDialogIsVisible = true" src="../img/login.jpg" alt="" />
+                        <img @click="loginDialogIsVisible = true" src="./img/login.jpg" alt="" />
                         <span>点击头像登录</span>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
 
         <el-container>
             <div class="music-nav-all">
-                <el-aside width="200px" >
+                <el-aside width="200px">
                     <el-row class="tac">
                         <el-col :span="24">
                             <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen"
@@ -68,8 +68,24 @@
                     </el-row>
                 </el-aside>
             </div>
-          
 
+           <el-main>
+            <div class="nav-music">
+                    <el-menu :default-active="defaultActive"
+                     class="el-menu-demo" 
+                    
+                    :default-openeds="['/find',]" router
+                    >
+                            <el-menu-item index="/find/recommend">个性推荐</el-menu-item>
+                            <el-menu-item index="/find/list">歌单</el-menu-item>
+                            <el-menu-item index="/find/thecharts">排行榜</el-menu-item>
+                            <el-menu-item index="/find/singer">歌手</el-menu-item>
+                           
+                       
+                    </el-menu>
+                </div>
+                <RouterView />
+           </el-main>
         </el-container>
         <el-footer>
             <div class="music-footer-all">
@@ -78,20 +94,18 @@
                     <el-col :span="4" class="music-log-all">
                         <div class="grid-content ep-bg-purple" />
                         <div class="music-footer-log">
-                            <img src="../img/login.jpg" alt="">
+                            <img src="./img/login.jpg" alt="">
                         </div>
                         <div class="music-footer-text">暂无歌曲</div>
                     </el-col>
-                    <el-col :span="16">
+                    <el-col :span="12">
                         <div class="grid-content ep-bg-purple" />
-                        
+
                     </el-col>
                     <el-col :span="4">
                         <div class="grid-content ep-bg-purple" />
                     </el-col>
                 </el-row>
-
-
             </div>
         </el-footer>
     </el-container>
@@ -99,16 +113,18 @@
 
 <script setup>
 
+
 </script>
 
 <style lang="scss" scoped>
 .el-header {
     padding: 0;
+    width: 100vw;
 }
 
 .music-header-all {
     background-color: #ec4141;
-    width: 100%;
+    width: 100vw;
     display: flex;
     margin: auto;
     padding: 0;
@@ -190,7 +206,7 @@
 }
 
 .music-nav-all {
-    min-height: calc(100vh - 120px);
+    height: calc(100vh - 120px);
     border-right: 1px solid #ccc;
 }
 
@@ -202,7 +218,7 @@
     border-top: 1px solid #ccc;
     padding: 0 20px;
 
-    width: 100%;
+    width: calc(100vw - 50px);
 }
 
 .music-footer-log {
@@ -225,10 +241,26 @@
     line-height: 60px;
 }
 
-.music-log-all{
+.music-log-all {
     display: flex;
 }
-.music-footer-top{
+
+.music-footer-top {
     display: flex;
+}
+
+
+.el-menu-demo {
+    height: 60px;
+    width: calc(100vw - 300px);
+    display: flex;
+}
+.nav-music{
+    min-width: calc(100vw - 200px);
+}
+.el-nav{
+width:  calc(100vw - 300px);
 }
 </style>
+
+

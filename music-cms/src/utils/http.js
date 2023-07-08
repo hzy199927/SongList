@@ -1,11 +1,11 @@
-// import axios from "axios";
+import axios from "axios";
 // import { useUsersStore } from '../stores/users';
 
 
-// const instance =axios.create({
-//     baseURL:'/api',
-//     timeout:5000
-// });
+const instance =axios.create({
+    baseURL:'/api',
+    timeout:5000
+});
 
 // instance.interceptors.request.use(function(config){
 //     const usersStore = useUsersStore()
@@ -41,4 +41,4 @@
 //       }
 // }
 
-// export default http
+export default http

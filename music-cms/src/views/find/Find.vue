@@ -43,25 +43,25 @@
                                     <el-icon>
                                         <Service />
                                     </el-icon>
-                                    <span>发现音乐</span>
+                                    发现音乐
                                 </el-menu-item>
                                 <el-menu-item index="/video">
                                     <el-icon>
                                         <Platform />
                                     </el-icon>
-                                    <span>视频</span>
+                                    视频
                                 </el-menu-item>
                                 <el-menu-item index="/like">
                                     <el-icon>
                                         <StarFilled />
                                     </el-icon>
-                                    <span>收藏</span>
+                                    收藏
                                 </el-menu-item>
-                                <el-menu-item index="find">
+                                <el-menu-item index="/find">
                                     <el-icon>
                                         <Pointer />
                                     </el-icon>
-                                    <span>每日推荐</span>
+                                    每日推荐
                                 </el-menu-item>
                             </el-menu>
                         </el-col>

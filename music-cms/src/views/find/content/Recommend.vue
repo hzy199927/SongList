@@ -38,7 +38,7 @@
 
 import {reactive} from 'vue'
 import { useRouter } from 'vue-router';
-import {banner,} from '@/api'
+import {banner,personalized} from '@/api'
 
 const router = useRouter ()
 const info = reactive({

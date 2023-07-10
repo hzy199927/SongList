@@ -5,3 +5,8 @@ export const banner = ( ) =>{
         url:`/banner`,methods:'GET'
     })
 }
+export const personalized = () => {
+    return request ({
+        url: `/personalized`, method: 'GET'
+    })
+}

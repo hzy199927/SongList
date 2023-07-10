@@ -17,7 +17,7 @@ export default defineConfig({
     port:8080,
     proxy: {
       '/api': {
-        target: 'https://service-dm0oohqg-1311542432.gz.apigw.tencentcs.com/release/',
+        target: 'http://localhost:3000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },

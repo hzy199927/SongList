@@ -5,7 +5,7 @@
          <img class="bgcImg" src="../../../img/back.jpg" alt="" />
          
          <div class="cover">
-            <img src="../../../img/back.jpg" alt="" />
+            <img src="" alt="" />
          </div>
        
          <div class="info">
@@ -93,20 +93,20 @@
 </template>
 
 <script setup>
-// import {boutique} from '@/api'
-import { reactive , ref} from 'vue';
-import { useRoute } from 'vue-router';
+import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
-const router = useRouter()
-// const info = reactive ({
-//    boutique :[] ,
-
-// })
-
+import { playlistTag,boutique } from '../../../api'
 
 const info = reactive({
-  songList : '',
+  playlistTag:[],
+  boutique:[],
+  hotTypeTag:[],
 })
+
+const getBoutique = async () =>{
+  let res = await boutique()
+  info.boutique = res.playlists[0]
+}
 </script>
 
 <style lang="scss" scoped>

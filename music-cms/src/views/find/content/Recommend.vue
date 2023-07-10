@@ -1,15 +1,17 @@
 <template>
-    <div>
-        <el-carousel
-         :interval="4000" 
-         type="card" height="225px" class="recommend-one">
+    <div class="recommed">
 
-            <el-carousel-item v-for="index in 6" >
-                <img src="../../../img/back.jpg" alt="">
-                <h3 text="2xl" justify="center">1</h3>
-            </el-carousel-item>
-        </el-carousel>
-
+        <div class="banner">
+            <el-carousel 
+            :interval="4000" 
+            type="card" 
+            height="225px" >
+                <el-carousel-item v-for="(i, index) in info.banners" :key="index">
+                    <img :src="i.imageUrl" alt="">
+                    
+                </el-carousel-item>
+            </el-carousel>
+        </div>
 
         <div class="personalized">
             <!-- 标题 -->
@@ -21,13 +23,16 @@
             </p>
             <!-- 内容 -->
             <ul class="lists">
-                <li class="list" v-for=" index in 8" :key="index" >
-                    <el-image src="../img/login.jpg" alt="">
+                <li class="list" v-for="(i, index) in info.personalized" :key="index">
+                    <el-image :src="i.picUrl" alt="" width="225px">
                         <div slot="placeholder" class="image-slot">
                             <img src="../../../img/loading.png" />
+                            {{ i.name }}
+
                         </div>
+
                     </el-image>
-                    <p class="title">{{ index }}</p>
+                    <p class="title">{{ i.name }}</p>
                 </li>
             </ul>
         </div>
@@ -36,64 +41,72 @@
 
 <script setup>
 
-import {reactive} from 'vue'
+import { reactive } from 'vue'
 import { useRouter } from 'vue-router';
-import {banner,personalized} from '@/api'
+import { banner, personalized } from './../../../api/index'
 
-const router = useRouter ()
+// const bannerse =banner()
+const router = useRouter()
 const info = reactive({
-    banners : [] ,
-    personalizes :[]
+    banners: [],
+    personalized: []
 })
 const getBanner = async () => {
-    let res = await banner()
-    info.banners = res.banners
+
+    let tmp = await banner()
+
+    info.banners = tmp.data.banners
+
 }
 
-const getPersonalizes = async () => {
+const getPersonalized = async () => {
     let res = await personalized()
-    info.personalizes = res.result
+    console.log(res.data.result)
+    info.personalized = res.data.result
+    console.log(info.personalized.name)
 }
 
 getBanner()
-getPersonalizes()
+getPersonalized()
 </script>
 
 <style lang="scss" scoped>
-.el-carousel__item h3 {
-    color: #475669;
-    opacity: 0.75;
-    line-height: 200px;
-    margin: 0;
-    text-align: center;
-}
-
-.el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-}
-
-.el-carousel__item:nth-child(2n + 1) {
-    background-color: #d3dce6;
-}
-
-.recommend-one {
-    width: calc(100vw - 210px);
-}
-.recommend-one img{width: 100%;height: 100%;}
-.personalized {
+.recommend {
+  cursor: default;
+  .banner {
+    max-width: 1000px;
+    min-width: 800px;
+    margin: auto;
+    .el-carousel__item {
+      border-radius: 10px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    :deep(.el-carousel__indicators) {
+      .el-carousel__button {
+        width: 40px;
+        height: 3px;
+      }
+    }
+  }
+  .personalized {
     max-width: 1250px;
     min-width: 992px;
     margin: 50px auto 0;
-
-    &>p.title {
-        font-size: 23px;
-        font-weight: bold;
-        color: #373737;
-        box-sizing: border-box;
-        padding: 0 15px;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
+    & > p.title {
+      font-size: 23px;
+      font-weight: bold;
+      color: #373737;
+      box-sizing: border-box;
+      padding: 0 15px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
     }
+  }
 }
+.image-slot{width: 250px;height: 250px;}
+
 </style>

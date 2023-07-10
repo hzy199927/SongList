@@ -37,21 +37,23 @@
                     <el-row class="tac">
                         <el-col :span="24">
                             <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen"
-                                @close="handleClose">
+                                @close="handleClose"
+                                :default-openeds="['/index',]" router
+                                >
 
-                                <el-menu-item index="/index">
+                                <el-menu-item index="/">
                                     <el-icon>
                                         <Service />
                                     </el-icon>
                                     发现音乐
                                 </el-menu-item>
-                                <el-menu-item index="/video">
+                                <el-menu-item index="/index/video">
                                     <el-icon>
                                         <Platform />
                                     </el-icon>
                                     每日推荐
                                 </el-menu-item>
-                                <el-menu-item index="/like">
+                                <el-menu-item index="/index/like">
                                     <el-icon>
                                         <StarFilled />
                                     </el-icon>

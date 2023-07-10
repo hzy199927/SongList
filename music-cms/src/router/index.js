@@ -15,63 +15,70 @@ const TheCharts = () => import ('@/views/find/content/TheCharts.vue')
 const router =createRouter ({
   history:createWebHistory(import.meta.env.BASE_URL),
   routes:[
-   
     {
-      path:'/like',
-      name:'like',
-      component:Like,
-    },
-    {
-      path:'/login',
-      name:'login',
-      component:Login,
-    },
-    {
-      path:'/',
-      name: 'find',
-      component:Find,
-      redirect : '/find/recommend',
-      children : [
+      path:'/index',
+      name: 'index',
+      component:Index,
+      redirect : '/index/find',
+      children:[
         {
-          path : '/find/list',
-          name : 'findList',
-          component:List,
-        
+          path:'/index/like',
+          name:'like',
+          component:Like,
         },
         {
-          path : '/find/recommend',
-          name : 'findRecommend',
-          component:Recommend,
-          meta : {
-            breadcrumbs : ['个性推荐']
-          }
+          path:'/index/video',
+          name: 'video',
+          component:Video,
         },
         {
-          path : '/find/singer',
-          name : 'findSinger',
-          component:Singer,
-          meta : {
-            breadcrumbs : ['歌手']
-          }
+          path:'/index/login',
+          name:'login',
+          component:Login,
         },
         {
-          path : '/find/thecharts',
-          name : 'findTheCharts',
-          component:TheCharts,
-          meta : {
-            breadcrumbs : ['排行榜']
-          }
+          path:'/index/find',
+          name: 'find',
+          component:Find,
+          redirect : '/find/recommend',
+          children : [
+            {
+              path : '/find/list',
+              name : 'findList',
+              component:List,
+            
+            },
+            {
+              path : '/find/recommend',
+              name : 'findRecommend',
+              component:Recommend,
+              meta : {
+                breadcrumbs : ['个性推荐']
+              }
+            },
+            {
+              path : '/find/singer',
+              name : 'findSinger',
+              component:Singer,
+              meta : {
+                breadcrumbs : ['歌手']
+              }
+            },
+            {
+              path : '/find/thecharts',
+              name : 'findTheCharts',
+              component:TheCharts,
+              meta : {
+                breadcrumbs : ['排行榜']
+              }
+            },
+            // { 
+            //   path: '/:pathMatch(.*)*', 
+            //   redirect: '/' 
+            // }
+          ]
         },
-        // { 
-        //   path: '/:pathMatch(.*)*', 
-        //   redirect: '/' 
-        // }
       ]
-    },
-    {
-      path:'/video',
-      name: 'video',
-      component:Video,
     },
   ]
 })

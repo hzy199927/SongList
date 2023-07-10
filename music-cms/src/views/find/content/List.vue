@@ -1,29 +1,28 @@
 <template>
    <div>
       <div class="boutique">
-         <!-- 背景图 -->
+       
          <img class="bgcImg" src="../../../img/back.jpg" alt="" />
-         <!-- 封面 -->
+         
          <div class="cover">
             <img src="../../../img/back.jpg" alt="" />
          </div>
-         <!-- 信息 -->
+       
          <div class="info">
             <div class="introduce">
                <el-button class="title">
                   <i class="iconfont">&#xe613;</i>
                   精品歌单
                </el-button>
-               <!-- 名称 -->
+              
                <p class="name">aaa</p>
-               <!-- 撰稿人 -->
+           
                <p class="copywriter">bbb</p>
             </div>
          </div>
       </div>
 
       <div class="songListType">
-      <!-- 所有类型（可下拉选择） -->
       <el-popover
         ref="popover"
         placement="bottom-start"
@@ -88,14 +87,14 @@
       </el-pagination>
     </div>
     <!-- 返回顶部的按钮 -->
-    <el-backtop target=".songList" :bottom="100"></el-backtop>
+    <!-- <el-backtop target=".songList" :bottom="100"></el-backtop> -->
   
    </div>
 </template>
 
 <script setup>
 // import {boutique} from '@/api'
-import { reactive } from 'vue';
+import { reactive , ref} from 'vue';
 import { useRoute } from 'vue-router';
 import { useRouter } from 'vue-router';
 const router = useRouter()
@@ -104,6 +103,10 @@ const router = useRouter()
 
 // })
 
+
+const info = reactive({
+  songList : '',
+})
 </script>
 
 <style lang="scss" scoped>

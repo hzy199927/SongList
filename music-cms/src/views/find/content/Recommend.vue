@@ -4,8 +4,8 @@
          :interval="4000" 
          type="card" height="225px" class="recommend-one">
 
-            <el-carousel-item v-for="(i, index) in banners" :key="index">
-                <img src="i.imageUrl" alt="">
+            <el-carousel-item v-for="index in 6" >
+                <img src="../../../img/back.jpg" alt="">
                 <h3 text="2xl" justify="center">1</h3>
             </el-carousel-item>
         </el-carousel>
@@ -21,13 +21,13 @@
             </p>
             <!-- 内容 -->
             <ul class="lists">
-                <li class="list" v-for="(i, index) in personalizes" :key="index" @click="toPlaylistDetails(i.id)">
-                    <el-image :src="i.picUrl" alt="">
+                <li class="list" v-for=" index in 8" :key="index" >
+                    <el-image src="../img/login.jpg" alt="">
                         <div slot="placeholder" class="image-slot">
                             <img src="../../../img/loading.png" />
                         </div>
                     </el-image>
-                    <p class="title">{{ i.name }}</p>
+                    <p class="title">{{ index }}</p>
                 </li>
             </ul>
         </div>

@@ -33,7 +33,7 @@
 
         <el-container>
             <div class="music-nav-all">
-                <el-aside width="200px" >
+                <el-aside width="200px">
                     <el-row class="tac">
                         <el-col :span="24">
                             <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen"
@@ -43,33 +43,31 @@
                                     <el-icon>
                                         <Service />
                                     </el-icon>
-                                    <span>发现音乐</span>
+                                    发现音乐
                                 </el-menu-item>
                                 <el-menu-item index="/video">
                                     <el-icon>
                                         <Platform />
                                     </el-icon>
-                                    <span>视频</span>
+                                    每日推荐
                                 </el-menu-item>
                                 <el-menu-item index="/like">
                                     <el-icon>
                                         <StarFilled />
                                     </el-icon>
-                                    <span>收藏</span>
+                                    收藏
                                 </el-menu-item>
-                                <el-menu-item index="find">
-                                    <el-icon>
-                                        <Pointer />
-                                    </el-icon>
-                                    <span>每日推荐</span>
-                                </el-menu-item>
+                                
                             </el-menu>
                         </el-col>
                     </el-row>
                 </el-aside>
             </div>
-          
 
+           <el-main>
+            
+                <RouterView />
+           </el-main>
         </el-container>
         <el-footer>
             <div class="music-footer-all">
@@ -82,16 +80,14 @@
                         </div>
                         <div class="music-footer-text">暂无歌曲</div>
                     </el-col>
-                    <el-col :span="16">
+                    <el-col :span="12">
                         <div class="grid-content ep-bg-purple" />
-                        
+
                     </el-col>
                     <el-col :span="4">
                         <div class="grid-content ep-bg-purple" />
                     </el-col>
                 </el-row>
-
-
             </div>
         </el-footer>
     </el-container>
@@ -99,16 +95,18 @@
 
 <script setup>
 
+
 </script>
 
 <style lang="scss" scoped>
 .el-header {
     padding: 0;
+    width: 100vw;
 }
 
 .music-header-all {
     background-color: #ec4141;
-    width: 100%;
+    width: 100vw;
     display: flex;
     margin: auto;
     padding: 0;
@@ -190,7 +188,7 @@
 }
 
 .music-nav-all {
-    min-height: calc(100vh - 120px);
+    height: calc(100vh - 120px);
     border-right: 1px solid #ccc;
 }
 
@@ -202,7 +200,7 @@
     border-top: 1px solid #ccc;
     padding: 0 20px;
 
-    width: 100%;
+    width: calc(100vw - 50px);
 }
 
 .music-footer-log {
@@ -225,10 +223,27 @@
     line-height: 60px;
 }
 
-.music-log-all{
+.music-log-all {
     display: flex;
 }
-.music-footer-top{
+
+.music-footer-top {
     display: flex;
 }
+
+
+.el-menu-demo {
+    height: 60px;
+    width: calc(100vw - 300px);
+    display: flex;
+}
+.nav-music{
+    min-width: calc(100vw - 200px);
+}
+.el-nav{
+width:  calc(100vw - 300px);
+}
+.el-main {height: calc(100vh - 120px);}
 </style>
+
+

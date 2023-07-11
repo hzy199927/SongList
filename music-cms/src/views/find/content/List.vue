@@ -2,10 +2,10 @@
    <div>
       <div class="boutique">
        
-         <img class="bgcImg" src="../../../img/back.jpg" alt="" />
+         <img class="bgcImg" :src="info.boutique.coverImgUrl" alt="" />
          
          <div class="cover">
-            <img src="" alt="" />
+            <img :src="info.boutique.coverImgUrl" alt="" />
          </div>
        
          <div class="info">
@@ -15,9 +15,9 @@
                   精品歌单
                </el-button>
               
-               <p class="name">aaa</p>
+               <p class="name">{{ info.boutique.name }}</p>
            
-               <p class="copywriter">bbb</p>
+               <p class="copywriter">{{ info.boutique.copywriter }}</p>
             </div>
          </div>
       </div>
@@ -31,14 +31,14 @@
       >
         <template #reference>
           <el-button class="typeSelect">
-            <span>aaa</span>
+            <span>{{ info.selectPlaylistName }}</span>
             <el-icon>
               <ArrowRight />
             </el-icon>
           </el-button>
         </template>
         <el-button
-          :class="{ list: true, select: selectPlaylistName === p.name }"
+        :class="{ list: true, select: selectPlaylistName === p.name }"
           v-for="(p, index) in playlistTag"
           :key="index"
           @click="changeType(index)"
@@ -50,10 +50,11 @@
       <!-- 热门类型 -->
       <div class="hotType">
         <el-button
-          :class="btn"
-         
+          :class="{ type: true, select: selectPlaylistName === h.name }"
+          v-for="(h, index) in hotTypeTag"
+          :key="index"
           @click="changeHot(index)"
-          >aaa</el-button
+          >{{ h.name }}</el-button
         >
       </div>
     </div>
@@ -62,26 +63,27 @@
       <ul class="lists">
         <li
           class="list"
-          
+          v-for="(h, index) in handpick"
+          :key="index"
           @click="toPlaylistDetails(h.id)"
         >
-          <el-image src="../../../img/login.jpg" alt="">
+          <el-image :src="h.coverImgUrl" alt="">
             <div slot="placeholder" class="image-slot">
-              <img src="../../../img/back.jpg" />
+              <img src="../../../assets/images/loading.png" />
             </div>
           </el-image>
-          <p class="title">bbb</p>
+          <p class="title">{{ h.name }}</p>
         </li>
       </ul>
     </div>
     <!-- 分页 -->
     <div class="pagination">
       <el-pagination
-        
+        v-show="handpick.length"
         background
-        :current-page="pagination + 1"
+        
         layout="prev, pager, next"
-        :total="pages * 10"
+        :total="info.pages * 10"
         @current-change="currentChange"
       >
       </el-pagination>
@@ -93,20 +95,68 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue';
+import { reactive, toRefs, watchEffect } from 'vue';
 import { useRouter } from 'vue-router';
-import { playlistTag,boutique } from '../../../api'
+import { boutique, playlistTag, hotTypeTag, handpick } from '../../../api'
 
+const router = useRouter()
 const info = reactive({
   playlistTag:[],
   boutique:[],
   hotTypeTag:[],
+  handpick:[],
+  selectPlaylistName:'华语',
+  pagination:0,
+  pages:0,
+  songList:''
 })
+
 
 const getBoutique = async () =>{
   let res = await boutique()
-  info.boutique = res.playlists[0]
+  info.boutique = res.data.playlists[0]
+  console.log(info.boutique)
 }
+const getPlaylistTag = async () => {
+  let res =await playlistTag()
+  info.playlistTag = res.data.sub
+}
+const getHotTypeTag = async () => {
+      let res = await hotTypeTag()
+      info.hotTypeTag = res.data.tags
+    }
+const getHandpick = async () => {
+     let res = await handpick(info.selectPlaylistName , info.pagination *50)
+     info.handpick = res.data.playlists
+     info.pages = Math.ceil(res.data.total/50)
+    //  info.songList.scrolltop = 0
+}
+
+const changeType = (i) => {
+  info.pagination = 0
+  info.selectPlaylistName = info.playlistTag[i].name
+}
+const changeHot = (i) => {
+  info.pagination = 0
+  info.selectPlaylistName = info.hotTypeTag[i].name
+} 
+
+const currentChange = (p ) => {
+  info.pagination = p - 1
+}
+const toPlaylistDetails = (id) => {
+      router.push({
+        name: 'playlistDetails',
+        params: {
+          id,
+        },
+      })
+    }
+
+getHotTypeTag()
+getPlaylistTag()
+getBoutique()
+getHandpick()
 </script>
 
 <style lang="scss" scoped>

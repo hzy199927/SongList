@@ -2,7 +2,8 @@
     <div>
  <el-main>
             <div class="nav-music">
-                    <el-menu :default-active="defaultActive"
+                    <el-menu 
+                    
                      class="el-menu-demo" 
                     
                     :default-openeds="['/find',]" router
@@ -11,7 +12,7 @@
                         <el-menu-item index="/find/list">歌单</el-menu-item>
                         <el-menu-item index="/find/thecharts">排行榜</el-menu-item>
                         <el-menu-item index="/find/singer">歌手</el-menu-item>
-                           
+                           <!-- :default-active="defaultActive" -->
                        
                     </el-menu>
                 </div>

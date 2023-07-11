@@ -43,7 +43,7 @@
 
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router';
-import { banner, personalized } from './../../../api/index'
+import { banner, personalized } from './../../../api'
 
 // const bannerse =banner()
 const router = useRouter()
@@ -61,9 +61,9 @@ const getBanner = async () => {
 
 const getPersonalized = async () => {
     let res = await personalized()
-    console.log(res.data.result)
+    
     info.personalized = res.data.result
-    console.log(info.personalized.name)
+   
 }
 
 getBanner()

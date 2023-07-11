@@ -33,7 +33,9 @@
           <el-button class="typeSelect">
             <span>{{ info.selectPlaylistName }}</span>
             <el-icon>
-              <ArrowRight />
+
+              <RouterView />
+
             </el-icon>
           </el-button>
         </template>

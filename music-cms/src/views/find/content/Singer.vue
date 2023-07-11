@@ -221,6 +221,12 @@ const selectType = (sign ) => {
     getSingers()
 }
 
+const toSingerDetails = (id) => {
+  router.push({
+    name:'findSingerel',
+    params: { id }
+  })
+}
 getSingers()
 </script>
 

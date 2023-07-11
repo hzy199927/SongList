@@ -11,6 +11,10 @@ const List = () => import ('@/views/find/content/List.vue')
 const Recommend = () => import ('@/views/find/content/Recommend.vue')
 const Singer = ( ) => import ('@/views/find/content/Singer.vue')
 const TheCharts = () => import ('@/views/find/content/TheCharts.vue')
+const ListEl = () => import('@/views/find/content/ListEl.vue') 
+const SingerEl = ( ) => import ('@/views/find/content/SingerEl.vue')
+
+
 
 const router =createRouter ({
   history:createWebHistory(import.meta.env.BASE_URL),
@@ -46,7 +50,13 @@ const router =createRouter ({
               path : '/find/list',
               name : 'findList',
               component:List,
-            
+              children :[
+                {
+                  path:'/find/list/el',
+                  name:'ListEl',
+                  component:ListEl
+                }
+              ]
             },
             {
               path : '/find/recommend',
@@ -72,6 +82,14 @@ const router =createRouter ({
                 breadcrumbs : ['排行榜']
               }
             },
+            {
+              path:'/find/singerel',
+              name:'findSingerel',
+              component:SingerEl,
+              meta : {
+                breadcrumbs : ['歌手详情']
+              }
+            }
             // { 
             //   path: '/:pathMatch(.*)*', 
             //   redirect: '/' 

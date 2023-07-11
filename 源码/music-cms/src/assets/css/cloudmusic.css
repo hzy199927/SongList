@@ -1,0 +1,1590 @@
+.el-container .el-header {
+  width: 100%;
+  background-color: #ec4141;
+}
+.el-container .el-container .el-aside {
+  height: calc(100vh - 120px);
+  border-right: 1px solid #cccccc;
+  background-color: #fff;
+}
+.el-container .el-container .el-aside::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.el-container .el-container .el-main {
+  padding: 0;
+  height: calc(100vh - 120px);
+  background-color: #fff;
+}
+.el-container .el-container .el-main::-webkit-scrollbar {
+  display: none;
+}
+.el-container .el-footer {
+  width: 100%;
+  border-top: 1px solid #cccccc;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 9998 !important;
+}
+.el-drawer.rtl {
+  height: calc(100vh - 60px);
+}
+.el-drawer.rtl .el-drawer__body {
+  z-index: 9998 !important;
+  padding: 0;
+}
+.el-drawer.rtl .el-drawer__body::-webkit-scrollbar {
+  width: 5px;
+}
+.el-drawer.rtl .amount {
+  font-size: 13px;
+  color: #aaa;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.el-drawer.rtl .el-table {
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.el-drawer.rtl .el-table::before {
+  height: 2px;
+  background-color: #ddd;
+}
+.el-drawer.rtl .el-table tr {
+  cursor: pointer;
+}
+.el-drawer.rtl .el-table tr td {
+  font-size: 12px;
+  border-bottom: none;
+  color: #2e2e2e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.el-drawer.rtl .el-table tr td i {
+  color: #1f1f1f;
+  font-weight: bold;
+  font-size: 13px;
+}
+.el-drawer.rtl .el-table tr td:nth-child(3) {
+  color: #868686;
+}
+.el-drawer.rtl .el-table tr:nth-child(2n + 1) {
+  background-color: #f8f8f8;
+}
+.el-drawer.rtl .el-table tr:hover {
+  background-color: #fcebeb;
+}
+.el-drawer.rtl .el-table tr:hover td {
+  background-color: #fcebeb;
+  color: #ec4141;
+}
+.el-drawer.rtl .el-table .el-table__empty-text {
+  font-size: 18px;
+}
+.el-drawer.rtl .el-table tr.active {
+  background-color: #fcebeb !important;
+}
+.el-drawer.rtl .el-table tr.active td {
+  color: #eb4f4f !important;
+}
+.el-drawer.rtl .el-table tr.active td:nth-child(3) {
+  color: #868686 !important;
+}
+.el-drawer.btt {
+  z-index: 9997 !important;
+  height: calc(100vh - 60px) !important;
+  background-color: white;
+  background-image: linear-gradient(to bottom, #e3e2e3, white);
+  position: absolute;
+  top: 0;
+}
+.el-drawer.btt .el-drawer__body {
+  padding: 0;
+}
+.el-drawer.btt .el-drawer__body::-webkit-scrollbar {
+  width: 5px;
+}
+.el-drawer.btt .packUp {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.el-drawer.btt .packUp i {
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+}
+.el-drawer.btt .not {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  color: #666;
+}
+.el-drawer.btt .setFrostedGlass {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.el-drawer.btt .setFrostedGlass i {
+  font-size: 25px;
+  color: #2e2e2e;
+}
+.el-drawer.btt .songDetails {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.el-drawer.btt .songDetails .songInfo {
+  height: 485px;
+  display: flex;
+  justify-content: center;
+}
+.el-drawer.btt .songDetails .songInfo .disc {
+  width: 275px;
+  height: 100%;
+  margin-right: 45px;
+  padding-top: 50px;
+  box-sizing: border-box;
+  position: relative;
+}
+.el-drawer.btt .songDetails .songInfo .disc .needle {
+  width: 110px;
+  height: 90px;
+  position: relative;
+  left: 50%;
+  top: 2%;
+  transition: all 1s;
+  z-index: 9999;
+  transform-origin: 8px 8px;
+}
+.el-drawer.btt .songDetails .songInfo .disc .needle img {
+  width: 110px;
+  height: 90px;
+}
+.el-drawer.btt .songDetails .songInfo .disc .disk {
+  width: 275px;
+  height: 275px;
+  position: relative;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-delay: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: spin;
+}
+.el-drawer.btt .songDetails .songInfo .disc .disk .outer img {
+  width: 275px;
+  height: 275px;
+}
+.el-drawer.btt .songDetails .songInfo .disc .disk .inner {
+  border-radius: 50%;
+  position: absolute;
+  top: 37.5px;
+  left: 37.5px;
+}
+.el-drawer.btt .songDetails .songInfo .disc .disk .inner img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.el-drawer.btt .songDetails .songInfo .disc .stop {
+  animation-play-state: paused;
+}
+.el-drawer.btt .songDetails .songInfo .disc .start {
+  animation-play-state: running;
+}
+.el-drawer.btt .songDetails .songInfo .disc .crush {
+  transform-origin: 8px 8px;
+  transform: rotate(22deg);
+}
+.el-drawer.btt .songDetails .songInfo .songDetails {
+  width: 438px;
+  height: 100%;
+  text-align: center;
+  cursor: default;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .title {
+  margin: 50px 0 20px;
+  color: #919191;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .title .name {
+  font-size: 30px;
+  margin: 10px 0;
+  color: #000;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .title .collection {
+  margin: 5px 0;
+  display: inline-block;
+  cursor: pointer;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .title .collection:hover {
+  color: #000;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .title .singers {
+  width: 200px;
+  margin: 5px auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .title .singers .singerName {
+  cursor: pointer;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .title .singers .singerName:hover {
+  color: #000;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .lyrics {
+  width: 438px;
+  height: 318px;
+  overflow: auto;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .lyrics::-webkit-scrollbar {
+  display: none;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .lyrics .placeholder {
+  height: 116px;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .lyrics .word {
+  margin: 30px 20px;
+  color: #666;
+}
+.el-drawer.btt .songDetails .songInfo .songDetails .lyrics .word.currentLyric {
+  color: black;
+  font-weight: bold;
+}
+.el-drawer.btt .songDetails .songComments {
+  width: 1035px;
+  margin: 50px auto 0;
+}
+.el-drawer.btt .songDetails .pagination {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 30px;
+}
+.el-drawer.frostedGlass {
+  backdrop-filter: blur(50px) brightness(95%) !important;
+  background-color: unset !important;
+  background-image: unset !important;
+}
+.el-button {
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background-color: #fff;
+}
+.el-button:hover,
+.el-button:active,
+.el-button:focus {
+  background-color: #fff;
+  color: black;
+}
+.el-slider {
+  height: auto !important;
+}
+.el-slider .el-slider__button-wrapper {
+  width: 10px;
+  height: 10px;
+  top: -10px;
+}
+.el-slider .el-slider__button-wrapper .el-slider__button {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ddd;
+}
+.el-slider .el-slider__bar {
+  height: 4px;
+  background-color: #ec4141;
+}
+.el-slider .el-slider__runway {
+  height: 4px;
+  margin: 8px 0;
+}
+.el-popover {
+  height: 240px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.el-popover .list {
+  width: 25%;
+  height: 30px;
+  text-align: center;
+  margin: 5px 0;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+.el-popover .select {
+  color: #eb4f4f;
+  background-color: #fcebeb;
+}
+.el-backtop i {
+  color: #ec4141;
+}
+.el-backtop:hover {
+  background-color: #fdf5f5;
+}
+.el-image {
+  width: 225px;
+  height: 225px;
+  border-radius: 20px;
+}
+.el-image.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-right: 20px;
+}
+.el-image.video {
+  width: 285px;
+  height: 180px;
+}
+.el-pagination ul.el-pager li {
+  background-color: #f4f4f5 !important;
+}
+.el-pagination ul.el-pager li.is-active {
+  background-color: #ec4141 !important;
+}
+.el-pagination ul.el-pager li.is-active:hover {
+  color: white !important;
+}
+.el-pagination ul.el-pager li:hover {
+  color: #ec4141 !important;
+}
+.el-pagination button {
+  background-color: #f4f4f5 !important;
+}
+.el-pagination.is-background .btn-next:hover:not([disabled]),
+.el-pagination.is-background .btn-prev:hover:not([disabled]) {
+  color: #ec4141;
+}
+.el-empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.el-table {
+  border-radius: 10px;
+}
+.el-table::before {
+  height: 0px;
+}
+.el-table tr {
+  cursor: pointer;
+}
+.el-table tr td {
+  font-size: 12px;
+  border-bottom: none;
+  color: #868686;
+}
+.el-table tr td .cell {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+.el-table tr td .cell .couldSkip:hover {
+  color: #ec4141;
+  border-bottom: 1px solid #ec4141;
+}
+.el-table tr td i {
+  color: #1f1f1f;
+  font-weight: bold;
+  font-size: 13px;
+}
+.el-table tr td:nth-child(3) {
+  color: #2e2e2e;
+}
+.el-table tr:nth-child(2n + 1) {
+  background-color: #f8f8f8;
+}
+.el-table tr:hover {
+  background-color: #f4f4f4;
+}
+.el-table tr:hover td {
+  background-color: #f4f4f4;
+}
+.el-textarea .el-textarea__inner {
+  resize: none;
+  height: 80px;
+}
+.el-textarea .el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px #eb4f4f inset;
+}
+.submitComment .submit {
+  margin-top: 20px;
+  display: flex;
+  justify-content: right;
+}
+.submitComment .submit .el-button {
+  width: 30px;
+  height: 14px;
+  padding: 7px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 13px;
+  box-sizing: content-box;
+}
+.submitComment .submit .el-button:hover {
+  background-color: #f2f2f2;
+}
+.el-form {
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.el-form .el-form-item {
+  margin-bottom: 25px;
+}
+.el-form .el-form-item .el-form-item__label {
+  justify-content: space-between;
+  color: #000;
+}
+.el-form .el-form-item .el-input__wrapper {
+  border-radius: 50px;
+}
+.el-form .el-form-item .el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px inset #555;
+}
+.el-form .el-form-item.is-error .el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px inset #f56c6c;
+}
+.el-form .el-form-item.captcha .el-form-item__content {
+  justify-content: space-between;
+}
+.el-form .el-form-item.captcha .el-form-item__content .el-input {
+  width: 150px;
+}
+.el-form .el-form-item.captcha .el-form-item__content .getCaptcha {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.el-form .el-form-item.captcha .el-form-item__content .getCaptcha:hover {
+  background-color: #f7f7f7;
+  color: #000;
+}
+.el-form .el-form-item .passwordHint {
+  width: 100%;
+  font-size: 12px;
+  text-align: right;
+  color: #bbb;
+  position: absolute;
+  top: 25px;
+}
+.el-form .passwordLogin {
+  display: flex;
+  justify-content: right;
+  color: #5a8ab9;
+}
+.el-form .passwordLogin span {
+  cursor: pointer;
+}
+.el-form .primary {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.el-form .primary .el-button {
+  padding: 0 100px;
+  border: 1px solid #ddd;
+  background-color: #ec4141;
+  color: white;
+}
+.el-form .primary .el-button:hover {
+  background-color: #e13e3e;
+  color: #fefefe;
+}
+.el-form .primary .el-button:active {
+  background-color: #d43b3b;
+  color: #fdfdfd;
+}
+.el-form .else {
+  display: flex;
+  justify-content: center;
+}
+.el-form .else .el-button span {
+  border-bottom: 1px solid #2e2e2e;
+}
+.el-form.registerForm .primary {
+  margin-top: 40px;
+}
+.el-popover.searchPop {
+  width: 380px !important;
+  height: 480px !important;
+  position: absolute !important;
+  top: -5px !important;
+  left: 80px !important;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px -1px rgba(85, 85, 85, 0.288);
+  box-sizing: border-box;
+  padding: 0 1px;
+  z-index: 9999;
+  border: 0;
+}
+.el-popover.searchPop .searchSuggest {
+  width: 380px !important;
+  font-size: 16px;
+}
+.el-popover.searchPop .searchSuggest > .title {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.el-popover.searchPop .searchSuggest .song .title,
+.el-popover.searchPop .searchSuggest .singer .title,
+.el-popover.searchPop .searchSuggest .collection .title,
+.el-popover.searchPop .searchSuggest .playlist .title {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  background-color: rgba(238, 238, 238, 0.603);
+}
+.el-popover.searchPop .searchSuggest .song .data,
+.el-popover.searchPop .searchSuggest .singer .data,
+.el-popover.searchPop .searchSuggest .collection .data,
+.el-popover.searchPop .searchSuggest .playlist .data {
+  padding: 0 20px;
+  height: 30px;
+  line-height: 30px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-container .el-header,
+.el-popover.searchPop .searchSuggest .singer .data .el-container .el-header,
+.el-popover.searchPop .searchSuggest .collection .data .el-container .el-header,
+.el-popover.searchPop .searchSuggest .playlist .data .el-container .el-header {
+  width: 100%;
+  background-color: #ec4141;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-container .el-container .el-aside,
+.el-popover.searchPop .searchSuggest .singer .data .el-container .el-container .el-aside,
+.el-popover.searchPop .searchSuggest .collection .data .el-container .el-container .el-aside,
+.el-popover.searchPop .searchSuggest .playlist .data .el-container .el-container .el-aside {
+  height: calc(100vh - 120px);
+  border-right: 1px solid #cccccc;
+  background-color: #fff;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-container .el-container .el-aside::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .singer .data .el-container .el-container .el-aside::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .collection .data .el-container .el-container .el-aside::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .playlist .data .el-container .el-container .el-aside::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-container .el-container .el-main,
+.el-popover.searchPop .searchSuggest .singer .data .el-container .el-container .el-main,
+.el-popover.searchPop .searchSuggest .collection .data .el-container .el-container .el-main,
+.el-popover.searchPop .searchSuggest .playlist .data .el-container .el-container .el-main {
+  padding: 0;
+  height: calc(100vh - 120px);
+  background-color: #fff;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-container .el-container .el-main::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .singer .data .el-container .el-container .el-main::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .collection .data .el-container .el-container .el-main::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .playlist .data .el-container .el-container .el-main::-webkit-scrollbar {
+  display: none;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-container .el-footer,
+.el-popover.searchPop .searchSuggest .singer .data .el-container .el-footer,
+.el-popover.searchPop .searchSuggest .collection .data .el-container .el-footer,
+.el-popover.searchPop .searchSuggest .playlist .data .el-container .el-footer {
+  width: 100%;
+  border-top: 1px solid #cccccc;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 9998 !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl {
+  height: calc(100vh - 60px);
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-drawer__body,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-drawer__body,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-drawer__body,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-drawer__body {
+  z-index: 9998 !important;
+  padding: 0;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-drawer__body::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-drawer__body::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-drawer__body::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-drawer__body::-webkit-scrollbar {
+  width: 5px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .amount,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .amount,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .amount,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .amount {
+  font-size: 13px;
+  color: #aaa;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table {
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table::before,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table::before,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table::before,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table::before {
+  height: 2px;
+  background-color: #ddd;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table tr,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table tr,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table tr,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table tr {
+  cursor: pointer;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table tr td,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table tr td,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table tr td,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table tr td {
+  font-size: 12px;
+  border-bottom: none;
+  color: #2e2e2e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table tr td i,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table tr td i,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table tr td i,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table tr td i {
+  color: #1f1f1f;
+  font-weight: bold;
+  font-size: 13px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table tr td:nth-child(3),
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table tr td:nth-child(3),
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table tr td:nth-child(3),
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table tr td:nth-child(3) {
+  color: #868686;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table tr:nth-child(2n + 1),
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table tr:nth-child(2n + 1),
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table tr:nth-child(2n + 1),
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table tr:nth-child(2n + 1) {
+  background-color: #f8f8f8;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table tr:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table tr:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table tr:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table tr:hover {
+  background-color: #fcebeb;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table tr:hover td,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table tr:hover td,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table tr:hover td,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table tr:hover td {
+  background-color: #fcebeb;
+  color: #ec4141;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table .el-table__empty-text,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table .el-table__empty-text,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table .el-table__empty-text,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table .el-table__empty-text {
+  font-size: 18px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table tr.active,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table tr.active,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table tr.active,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table tr.active {
+  background-color: #fcebeb !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table tr.active td,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table tr.active td,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table tr.active td,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table tr.active td {
+  color: #eb4f4f !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.rtl .el-table tr.active td:nth-child(3),
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.rtl .el-table tr.active td:nth-child(3),
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.rtl .el-table tr.active td:nth-child(3),
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.rtl .el-table tr.active td:nth-child(3) {
+  color: #868686 !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt {
+  z-index: 9997 !important;
+  height: calc(100vh - 60px) !important;
+  background-color: white;
+  background-image: linear-gradient(to bottom, #e3e2e3, white);
+  position: absolute;
+  top: 0;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .el-drawer__body,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .el-drawer__body,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .el-drawer__body,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .el-drawer__body {
+  padding: 0;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .el-drawer__body::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .el-drawer__body::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .el-drawer__body::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .el-drawer__body::-webkit-scrollbar {
+  width: 5px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .packUp,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .packUp,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .packUp,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .packUp {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .packUp i,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .packUp i,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .packUp i,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .packUp i {
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .not,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .not,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .not,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .not {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  color: #666;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .setFrostedGlass,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .setFrostedGlass,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .setFrostedGlass,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .setFrostedGlass {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .setFrostedGlass i,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .setFrostedGlass i,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .setFrostedGlass i,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .setFrostedGlass i {
+  font-size: 25px;
+  color: #2e2e2e;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo {
+  height: 485px;
+  display: flex;
+  justify-content: center;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .disc,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .disc,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .disc,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .disc {
+  width: 275px;
+  height: 100%;
+  margin-right: 45px;
+  padding-top: 50px;
+  box-sizing: border-box;
+  position: relative;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .disc .needle,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .disc .needle,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .disc .needle,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .disc .needle {
+  width: 110px;
+  height: 90px;
+  position: relative;
+  left: 50%;
+  top: 2%;
+  transition: all 1s;
+  z-index: 9999;
+  transform-origin: 8px 8px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .disc .needle img,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .disc .needle img,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .disc .needle img,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .disc .needle img {
+  width: 110px;
+  height: 90px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .disc .disk,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .disc .disk,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .disc .disk,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .disc .disk {
+  width: 275px;
+  height: 275px;
+  position: relative;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-delay: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: spin;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .disc .disk .outer img,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .disc .disk .outer img,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .disc .disk .outer img,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .disc .disk .outer img {
+  width: 275px;
+  height: 275px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .disc .disk .inner,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .disc .disk .inner,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .disc .disk .inner,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .disc .disk .inner {
+  border-radius: 50%;
+  position: absolute;
+  top: 37.5px;
+  left: 37.5px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .disc .disk .inner img,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .disc .disk .inner img,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .disc .disk .inner img,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .disc .disk .inner img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .disc .stop,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .disc .stop,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .disc .stop,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .disc .stop {
+  animation-play-state: paused;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .disc .start,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .disc .start,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .disc .start,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .disc .start {
+  animation-play-state: running;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .disc .crush,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .disc .crush,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .disc .crush,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .disc .crush {
+  transform-origin: 8px 8px;
+  transform: rotate(22deg);
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails {
+  width: 438px;
+  height: 100%;
+  text-align: center;
+  cursor: default;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .title,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .title,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .title,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .title {
+  margin: 50px 0 20px;
+  color: #919191;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .title .name,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .title .name,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .title .name,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .title .name {
+  font-size: 30px;
+  margin: 10px 0;
+  color: #000;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .title .collection,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .title .collection,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .title .collection,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .title .collection {
+  margin: 5px 0;
+  display: inline-block;
+  cursor: pointer;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .title .collection:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .title .collection:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .title .collection:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .title .collection:hover {
+  color: #000;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers {
+  width: 200px;
+  margin: 5px auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers .singerName,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers .singerName,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers .singerName,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers .singerName {
+  cursor: pointer;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers .singerName:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers .singerName:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers .singerName:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .title .singers .singerName:hover {
+  color: #000;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics {
+  width: 438px;
+  height: 318px;
+  overflow: auto;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics::-webkit-scrollbar,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics::-webkit-scrollbar {
+  display: none;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .placeholder,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .placeholder,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .placeholder,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .placeholder {
+  height: 116px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .word,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .word,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .word,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .word {
+  margin: 30px 20px;
+  color: #666;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .word.currentLyric,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .word.currentLyric,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .word.currentLyric,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songInfo .songDetails .lyrics .word.currentLyric {
+  color: black;
+  font-weight: bold;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .songComments,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .songComments,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .songComments,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .songComments {
+  width: 1035px;
+  margin: 50px auto 0;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.btt .songDetails .pagination,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.btt .songDetails .pagination,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.btt .songDetails .pagination,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.btt .songDetails .pagination {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 30px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-drawer.frostedGlass,
+.el-popover.searchPop .searchSuggest .singer .data .el-drawer.frostedGlass,
+.el-popover.searchPop .searchSuggest .collection .data .el-drawer.frostedGlass,
+.el-popover.searchPop .searchSuggest .playlist .data .el-drawer.frostedGlass {
+  backdrop-filter: blur(50px) brightness(95%) !important;
+  background-color: unset !important;
+  background-image: unset !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-button,
+.el-popover.searchPop .searchSuggest .singer .data .el-button,
+.el-popover.searchPop .searchSuggest .collection .data .el-button,
+.el-popover.searchPop .searchSuggest .playlist .data .el-button {
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background-color: #fff;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-button:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-button:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-button:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-button:hover,
+.el-popover.searchPop .searchSuggest .song .data .el-button:active,
+.el-popover.searchPop .searchSuggest .singer .data .el-button:active,
+.el-popover.searchPop .searchSuggest .collection .data .el-button:active,
+.el-popover.searchPop .searchSuggest .playlist .data .el-button:active,
+.el-popover.searchPop .searchSuggest .song .data .el-button:focus,
+.el-popover.searchPop .searchSuggest .singer .data .el-button:focus,
+.el-popover.searchPop .searchSuggest .collection .data .el-button:focus,
+.el-popover.searchPop .searchSuggest .playlist .data .el-button:focus {
+  background-color: #fff;
+  color: black;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-slider,
+.el-popover.searchPop .searchSuggest .singer .data .el-slider,
+.el-popover.searchPop .searchSuggest .collection .data .el-slider,
+.el-popover.searchPop .searchSuggest .playlist .data .el-slider {
+  height: auto !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-slider .el-slider__button-wrapper,
+.el-popover.searchPop .searchSuggest .singer .data .el-slider .el-slider__button-wrapper,
+.el-popover.searchPop .searchSuggest .collection .data .el-slider .el-slider__button-wrapper,
+.el-popover.searchPop .searchSuggest .playlist .data .el-slider .el-slider__button-wrapper {
+  width: 10px;
+  height: 10px;
+  top: -10px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-slider .el-slider__button-wrapper .el-slider__button,
+.el-popover.searchPop .searchSuggest .singer .data .el-slider .el-slider__button-wrapper .el-slider__button,
+.el-popover.searchPop .searchSuggest .collection .data .el-slider .el-slider__button-wrapper .el-slider__button,
+.el-popover.searchPop .searchSuggest .playlist .data .el-slider .el-slider__button-wrapper .el-slider__button {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ddd;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-slider .el-slider__bar,
+.el-popover.searchPop .searchSuggest .singer .data .el-slider .el-slider__bar,
+.el-popover.searchPop .searchSuggest .collection .data .el-slider .el-slider__bar,
+.el-popover.searchPop .searchSuggest .playlist .data .el-slider .el-slider__bar {
+  height: 4px;
+  background-color: #ec4141;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-slider .el-slider__runway,
+.el-popover.searchPop .searchSuggest .singer .data .el-slider .el-slider__runway,
+.el-popover.searchPop .searchSuggest .collection .data .el-slider .el-slider__runway,
+.el-popover.searchPop .searchSuggest .playlist .data .el-slider .el-slider__runway {
+  height: 4px;
+  margin: 8px 0;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-popover,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover {
+  height: 240px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-popover .list,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover .list,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover .list,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover .list {
+  width: 25%;
+  height: 30px;
+  text-align: center;
+  margin: 5px 0;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-popover .select,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover .select,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover .select,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover .select {
+  color: #eb4f4f;
+  background-color: #fcebeb;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-backtop i,
+.el-popover.searchPop .searchSuggest .singer .data .el-backtop i,
+.el-popover.searchPop .searchSuggest .collection .data .el-backtop i,
+.el-popover.searchPop .searchSuggest .playlist .data .el-backtop i {
+  color: #ec4141;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-backtop:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-backtop:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-backtop:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-backtop:hover {
+  background-color: #fdf5f5;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-image,
+.el-popover.searchPop .searchSuggest .singer .data .el-image,
+.el-popover.searchPop .searchSuggest .collection .data .el-image,
+.el-popover.searchPop .searchSuggest .playlist .data .el-image {
+  width: 225px;
+  height: 225px;
+  border-radius: 20px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-image.logo,
+.el-popover.searchPop .searchSuggest .singer .data .el-image.logo,
+.el-popover.searchPop .searchSuggest .collection .data .el-image.logo,
+.el-popover.searchPop .searchSuggest .playlist .data .el-image.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-right: 20px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-image.video,
+.el-popover.searchPop .searchSuggest .singer .data .el-image.video,
+.el-popover.searchPop .searchSuggest .collection .data .el-image.video,
+.el-popover.searchPop .searchSuggest .playlist .data .el-image.video {
+  width: 285px;
+  height: 180px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-pagination ul.el-pager li,
+.el-popover.searchPop .searchSuggest .singer .data .el-pagination ul.el-pager li,
+.el-popover.searchPop .searchSuggest .collection .data .el-pagination ul.el-pager li,
+.el-popover.searchPop .searchSuggest .playlist .data .el-pagination ul.el-pager li {
+  background-color: #f4f4f5 !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-pagination ul.el-pager li.is-active,
+.el-popover.searchPop .searchSuggest .singer .data .el-pagination ul.el-pager li.is-active,
+.el-popover.searchPop .searchSuggest .collection .data .el-pagination ul.el-pager li.is-active,
+.el-popover.searchPop .searchSuggest .playlist .data .el-pagination ul.el-pager li.is-active {
+  background-color: #ec4141 !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-pagination ul.el-pager li.is-active:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-pagination ul.el-pager li.is-active:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-pagination ul.el-pager li.is-active:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-pagination ul.el-pager li.is-active:hover {
+  color: white !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-pagination ul.el-pager li:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-pagination ul.el-pager li:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-pagination ul.el-pager li:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-pagination ul.el-pager li:hover {
+  color: #ec4141 !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-pagination button,
+.el-popover.searchPop .searchSuggest .singer .data .el-pagination button,
+.el-popover.searchPop .searchSuggest .collection .data .el-pagination button,
+.el-popover.searchPop .searchSuggest .playlist .data .el-pagination button {
+  background-color: #f4f4f5 !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-pagination.is-background .btn-next:hover:not([disabled]),
+.el-popover.searchPop .searchSuggest .singer .data .el-pagination.is-background .btn-next:hover:not([disabled]),
+.el-popover.searchPop .searchSuggest .collection .data .el-pagination.is-background .btn-next:hover:not([disabled]),
+.el-popover.searchPop .searchSuggest .playlist .data .el-pagination.is-background .btn-next:hover:not([disabled]),
+.el-popover.searchPop .searchSuggest .song .data .el-pagination.is-background .btn-prev:hover:not([disabled]),
+.el-popover.searchPop .searchSuggest .singer .data .el-pagination.is-background .btn-prev:hover:not([disabled]),
+.el-popover.searchPop .searchSuggest .collection .data .el-pagination.is-background .btn-prev:hover:not([disabled]),
+.el-popover.searchPop .searchSuggest .playlist .data .el-pagination.is-background .btn-prev:hover:not([disabled]) {
+  color: #ec4141;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-empty,
+.el-popover.searchPop .searchSuggest .singer .data .el-empty,
+.el-popover.searchPop .searchSuggest .collection .data .el-empty,
+.el-popover.searchPop .searchSuggest .playlist .data .el-empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.el-popover.searchPop .searchSuggest .song .data .el-table,
+.el-popover.searchPop .searchSuggest .singer .data .el-table,
+.el-popover.searchPop .searchSuggest .collection .data .el-table,
+.el-popover.searchPop .searchSuggest .playlist .data .el-table {
+  border-radius: 10px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-table::before,
+.el-popover.searchPop .searchSuggest .singer .data .el-table::before,
+.el-popover.searchPop .searchSuggest .collection .data .el-table::before,
+.el-popover.searchPop .searchSuggest .playlist .data .el-table::before {
+  height: 0px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-table tr,
+.el-popover.searchPop .searchSuggest .singer .data .el-table tr,
+.el-popover.searchPop .searchSuggest .collection .data .el-table tr,
+.el-popover.searchPop .searchSuggest .playlist .data .el-table tr {
+  cursor: pointer;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-table tr td,
+.el-popover.searchPop .searchSuggest .singer .data .el-table tr td,
+.el-popover.searchPop .searchSuggest .collection .data .el-table tr td,
+.el-popover.searchPop .searchSuggest .playlist .data .el-table tr td {
+  font-size: 12px;
+  border-bottom: none;
+  color: #868686;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-table tr td .cell,
+.el-popover.searchPop .searchSuggest .singer .data .el-table tr td .cell,
+.el-popover.searchPop .searchSuggest .collection .data .el-table tr td .cell,
+.el-popover.searchPop .searchSuggest .playlist .data .el-table tr td .cell {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-table tr td .cell .couldSkip:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-table tr td .cell .couldSkip:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-table tr td .cell .couldSkip:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-table tr td .cell .couldSkip:hover {
+  color: #ec4141;
+  border-bottom: 1px solid #ec4141;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-table tr td i,
+.el-popover.searchPop .searchSuggest .singer .data .el-table tr td i,
+.el-popover.searchPop .searchSuggest .collection .data .el-table tr td i,
+.el-popover.searchPop .searchSuggest .playlist .data .el-table tr td i {
+  color: #1f1f1f;
+  font-weight: bold;
+  font-size: 13px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-table tr td:nth-child(3),
+.el-popover.searchPop .searchSuggest .singer .data .el-table tr td:nth-child(3),
+.el-popover.searchPop .searchSuggest .collection .data .el-table tr td:nth-child(3),
+.el-popover.searchPop .searchSuggest .playlist .data .el-table tr td:nth-child(3) {
+  color: #2e2e2e;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-table tr:nth-child(2n + 1),
+.el-popover.searchPop .searchSuggest .singer .data .el-table tr:nth-child(2n + 1),
+.el-popover.searchPop .searchSuggest .collection .data .el-table tr:nth-child(2n + 1),
+.el-popover.searchPop .searchSuggest .playlist .data .el-table tr:nth-child(2n + 1) {
+  background-color: #f8f8f8;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-table tr:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-table tr:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-table tr:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-table tr:hover {
+  background-color: #f4f4f4;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-table tr:hover td,
+.el-popover.searchPop .searchSuggest .singer .data .el-table tr:hover td,
+.el-popover.searchPop .searchSuggest .collection .data .el-table tr:hover td,
+.el-popover.searchPop .searchSuggest .playlist .data .el-table tr:hover td {
+  background-color: #f4f4f4;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-textarea .el-textarea__inner,
+.el-popover.searchPop .searchSuggest .singer .data .el-textarea .el-textarea__inner,
+.el-popover.searchPop .searchSuggest .collection .data .el-textarea .el-textarea__inner,
+.el-popover.searchPop .searchSuggest .playlist .data .el-textarea .el-textarea__inner {
+  resize: none;
+  height: 80px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-textarea .el-textarea__inner:focus,
+.el-popover.searchPop .searchSuggest .singer .data .el-textarea .el-textarea__inner:focus,
+.el-popover.searchPop .searchSuggest .collection .data .el-textarea .el-textarea__inner:focus,
+.el-popover.searchPop .searchSuggest .playlist .data .el-textarea .el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px #eb4f4f inset;
+}
+.el-popover.searchPop .searchSuggest .song .data .submitComment .submit,
+.el-popover.searchPop .searchSuggest .singer .data .submitComment .submit,
+.el-popover.searchPop .searchSuggest .collection .data .submitComment .submit,
+.el-popover.searchPop .searchSuggest .playlist .data .submitComment .submit {
+  margin-top: 20px;
+  display: flex;
+  justify-content: right;
+}
+.el-popover.searchPop .searchSuggest .song .data .submitComment .submit .el-button,
+.el-popover.searchPop .searchSuggest .singer .data .submitComment .submit .el-button,
+.el-popover.searchPop .searchSuggest .collection .data .submitComment .submit .el-button,
+.el-popover.searchPop .searchSuggest .playlist .data .submitComment .submit .el-button {
+  width: 30px;
+  height: 14px;
+  padding: 7px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 13px;
+  box-sizing: content-box;
+}
+.el-popover.searchPop .searchSuggest .song .data .submitComment .submit .el-button:hover,
+.el-popover.searchPop .searchSuggest .singer .data .submitComment .submit .el-button:hover,
+.el-popover.searchPop .searchSuggest .collection .data .submitComment .submit .el-button:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .submitComment .submit .el-button:hover {
+  background-color: #f2f2f2;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form,
+.el-popover.searchPop .searchSuggest .singer .data .el-form,
+.el-popover.searchPop .searchSuggest .collection .data .el-form,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form {
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .el-form-item,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .el-form-item,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .el-form-item,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .el-form-item {
+  margin-bottom: 25px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .el-form-item .el-form-item__label,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .el-form-item .el-form-item__label,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .el-form-item .el-form-item__label,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .el-form-item .el-form-item__label {
+  justify-content: space-between;
+  color: #000;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .el-form-item .el-input__wrapper,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .el-form-item .el-input__wrapper,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .el-form-item .el-input__wrapper,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .el-form-item .el-input__wrapper {
+  border-radius: 50px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .el-form-item .el-input__wrapper.is-focus,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .el-form-item .el-input__wrapper.is-focus,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .el-form-item .el-input__wrapper.is-focus,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .el-form-item .el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px inset #555;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .el-form-item.is-error .el-input__wrapper.is-focus,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .el-form-item.is-error .el-input__wrapper.is-focus,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .el-form-item.is-error .el-input__wrapper.is-focus,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .el-form-item.is-error .el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px inset #f56c6c;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .el-form-item.captcha .el-form-item__content,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .el-form-item.captcha .el-form-item__content,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .el-form-item.captcha .el-form-item__content,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .el-form-item.captcha .el-form-item__content {
+  justify-content: space-between;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .el-form-item.captcha .el-form-item__content .el-input,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .el-form-item.captcha .el-form-item__content .el-input,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .el-form-item.captcha .el-form-item__content .el-input,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .el-form-item.captcha .el-form-item__content .el-input {
+  width: 150px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .el-form-item.captcha .el-form-item__content .getCaptcha,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .el-form-item.captcha .el-form-item__content .getCaptcha,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .el-form-item.captcha .el-form-item__content .getCaptcha,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .el-form-item.captcha .el-form-item__content .getCaptcha {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .el-form-item.captcha .el-form-item__content .getCaptcha:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .el-form-item.captcha .el-form-item__content .getCaptcha:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .el-form-item.captcha .el-form-item__content .getCaptcha:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .el-form-item.captcha .el-form-item__content .getCaptcha:hover {
+  background-color: #f7f7f7;
+  color: #000;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .el-form-item .passwordHint,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .el-form-item .passwordHint,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .el-form-item .passwordHint,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .el-form-item .passwordHint {
+  width: 100%;
+  font-size: 12px;
+  text-align: right;
+  color: #bbb;
+  position: absolute;
+  top: 25px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .passwordLogin,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .passwordLogin,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .passwordLogin,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .passwordLogin {
+  display: flex;
+  justify-content: right;
+  color: #5a8ab9;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .passwordLogin span,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .passwordLogin span,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .passwordLogin span,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .passwordLogin span {
+  cursor: pointer;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .primary,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .primary,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .primary,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .primary {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .primary .el-button,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .primary .el-button,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .primary .el-button,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .primary .el-button {
+  padding: 0 100px;
+  border: 1px solid #ddd;
+  background-color: #ec4141;
+  color: white;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .primary .el-button:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .primary .el-button:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .primary .el-button:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .primary .el-button:hover {
+  background-color: #e13e3e;
+  color: #fefefe;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .primary .el-button:active,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .primary .el-button:active,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .primary .el-button:active,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .primary .el-button:active {
+  background-color: #d43b3b;
+  color: #fdfdfd;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .else,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .else,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .else,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .else {
+  display: flex;
+  justify-content: center;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form .else .el-button span,
+.el-popover.searchPop .searchSuggest .singer .data .el-form .else .el-button span,
+.el-popover.searchPop .searchSuggest .collection .data .el-form .else .el-button span,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form .else .el-button span {
+  border-bottom: 1px solid #2e2e2e;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-form.registerForm .primary,
+.el-popover.searchPop .searchSuggest .singer .data .el-form.registerForm .primary,
+.el-popover.searchPop .searchSuggest .collection .data .el-form.registerForm .primary,
+.el-popover.searchPop .searchSuggest .playlist .data .el-form.registerForm .primary {
+  margin-top: 40px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop {
+  width: 380px !important;
+  height: 480px !important;
+  position: absolute !important;
+  top: -5px !important;
+  left: 80px !important;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px -1px rgba(85, 85, 85, 0.288);
+  box-sizing: border-box;
+  padding: 0 1px;
+  z-index: 9999;
+  border: 0;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest {
+  width: 380px !important;
+  font-size: 16px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest > .title,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest > .title,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest > .title,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest > .title {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .song .title,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .song .title,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .song .title,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .song .title,
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .singer .title,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .singer .title,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .singer .title,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .singer .title,
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .collection .title,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .collection .title,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .collection .title,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .collection .title,
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .playlist .title,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .playlist .title,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .playlist .title,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .playlist .title {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  background-color: rgba(238, 238, 238, 0.603);
+}
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .song .data,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .song .data,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .song .data,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .song .data,
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .singer .data,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .singer .data,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .singer .data,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .singer .data,
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .collection .data,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .collection .data,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .collection .data,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .collection .data,
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .playlist .data,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .playlist .data,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .playlist .data,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .playlist .data {
+  padding: 0 20px;
+  height: 30px;
+  line-height: 30px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .song .data:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .song .data:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .song .data:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .song .data:hover,
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .singer .data:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .singer .data:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .singer .data:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .singer .data:hover,
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .collection .data:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .collection .data:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .collection .data:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .collection .data:hover,
+.el-popover.searchPop .searchSuggest .song .data .el-popover.searchPop .searchSuggest .playlist .data:hover,
+.el-popover.searchPop .searchSuggest .singer .data .el-popover.searchPop .searchSuggest .playlist .data:hover,
+.el-popover.searchPop .searchSuggest .collection .data .el-popover.searchPop .searchSuggest .playlist .data:hover,
+.el-popover.searchPop .searchSuggest .playlist .data .el-popover.searchPop .searchSuggest .playlist .data:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-loading-mask.is-fullscreen,
+.el-popover.searchPop .searchSuggest .singer .data .el-loading-mask.is-fullscreen,
+.el-popover.searchPop .searchSuggest .collection .data .el-loading-mask.is-fullscreen,
+.el-popover.searchPop .searchSuggest .playlist .data .el-loading-mask.is-fullscreen {
+  z-index: 9999 !important;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-loading-mask.is-fullscreen .el-loading-text,
+.el-popover.searchPop .searchSuggest .singer .data .el-loading-mask.is-fullscreen .el-loading-text,
+.el-popover.searchPop .searchSuggest .collection .data .el-loading-mask.is-fullscreen .el-loading-text,
+.el-popover.searchPop .searchSuggest .playlist .data .el-loading-mask.is-fullscreen .el-loading-text {
+  color: #d43b3b;
+  font-size: 16px;
+}
+.el-popover.searchPop .searchSuggest .song .data .el-loading-mask.is-fullscreen .path,
+.el-popover.searchPop .searchSuggest .singer .data .el-loading-mask.is-fullscreen .path,
+.el-popover.searchPop .searchSuggest .collection .data .el-loading-mask.is-fullscreen .path,
+.el-popover.searchPop .searchSuggest .playlist .data .el-loading-mask.is-fullscreen .path {
+  stroke: #d43b3b !important;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.el-popover.searchPop .searchSuggest .song .data:hover,
+.el-popover.searchPop .searchSuggest .singer .data:hover,
+.el-popover.searchPop .searchSuggest .collection .data:hover,
+.el-popover.searchPop .searchSuggest .playlist .data:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+.el-loading-mask.is-fullscreen {
+  z-index: 9999 !important;
+}
+.el-loading-mask.is-fullscreen .el-loading-text {
+  color: #d43b3b;
+  font-size: 16px;
+}
+.el-loading-mask.is-fullscreen .path {
+  stroke: #d43b3b !important;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

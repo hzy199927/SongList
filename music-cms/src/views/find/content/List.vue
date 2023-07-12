@@ -79,6 +79,8 @@ const info = reactive({
 })
 
 
+
+
 const getBoutique = async () => {
   let res = await boutique()
   info.boutique = res.data.playlists[0]

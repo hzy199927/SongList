@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="music-header-login">
-                    <div v-if="!loginState">
+                    <div v-if="!info.loginState">
                         <img @click="loginDialogIsVisible = true" src="../img/login.jpg" alt="" />
                         <span>点击头像登录</span>
                     </div>
@@ -98,7 +98,7 @@
 import { reactive ,ref} from 'vue';
 import { useRouter } from 'vue-router';
 
-
+let timer
 
 const router = useRouter()
 const info = reactive({

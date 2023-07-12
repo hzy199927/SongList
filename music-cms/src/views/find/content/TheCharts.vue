@@ -68,7 +68,7 @@ const info = reactive({
 })
 
 const getOfficial = async () => {
-    let res = await  topList()
+    let res = await topList()
     info.official = res.data.list.slice(0,4)
     for(let i=0 ; i < info.official.length ;i++){
         let id= info.official[i].id

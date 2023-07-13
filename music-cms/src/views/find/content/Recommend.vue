@@ -45,7 +45,7 @@ import { reactive } from 'vue'
 import { useRouter } from 'vue-router';
 import { banner, personalized } from './../../../api'
 
-// const bannerse =banner()
+
 const router = useRouter()
 const info = reactive({
     banners: [],

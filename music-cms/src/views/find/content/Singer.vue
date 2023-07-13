@@ -81,6 +81,14 @@ import {singers} from '../../../api'
 import { reactive , computed } from 'vue';
 import { useRouter } from 'vue-router';
 
+const time = computed ({
+    get () {
+        return info.time
+    },
+    set (val) {
+       return val
+    }
+})
 const router = useRouter()
 const info = reactive({
     areaKey: -1,
@@ -169,14 +177,7 @@ const staticInfo = {
       ],
 }
 
-const time = computed ({
-    get () {
-        return info.time
-    },
-    set (val) {
-       return val
-    }
-})
+
 const getSingers = async () => {
     let res = await singers(
         info.areaKey,
@@ -220,6 +221,16 @@ const selectType = (sign ) => {
     info.singers = []
     getSingers()
 }
+
+const toSingerDetails = (id) => {
+  router.push({
+    name:'findSingerel',
+    query: { 
+     id
+    }
+  })
+}
+
 
 getSingers()
 </script>

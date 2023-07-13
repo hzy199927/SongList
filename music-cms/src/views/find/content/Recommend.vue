@@ -23,7 +23,7 @@
             </p>
             <!-- 内容 -->
             <ul class="lists">
-                <li class="list" v-for="(i, index) in info.personalized" :key="index">
+                <li class="list" v-for="(i, index) in info.personalized" :key="index" >
                     <el-image :src="i.picUrl" alt="" width="225px">
                         <div slot="placeholder" class="image-slot">
                             <img src="../../../img/loading.png" />

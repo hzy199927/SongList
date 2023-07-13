@@ -1,18 +1,16 @@
 <template>
     <el-container>
-
         <el-header>
-
             <div class="music-header-all">
                 <div class="music-header-img">
                     <img src="../img/logo.png" alt="">
                 </div>
                 <div class="music-header-two">
-                    <el-button icon="ArrowLeft" circle />
-                    <el-button icon="ArrowRight" circle />
+                    <el-button icon="ArrowLeft" circle @click="router.back()"/>
+                    <el-button icon="ArrowRight" circle @click="router.forward()"/>
                 </div>
                 <div class="music-header-int">
-                    <el-popover v-model="isSearchPopShow" popper-class="searchPop" trigger="click" hide-after="50">
+                    <el-popover v-model="info.isSearchPopShow" popper-class="searchPop" trigger="click" hide-after="50">
                         <template #reference>
                             <el-input placeholder="请输入内容" :prefix-icon="Search" v-model.trim="keywords"
                                 @keyup.enter.native="toSearch" @input="keywordsChange"></el-input>
@@ -22,7 +20,7 @@
                 </div>
 
                 <div class="music-header-login">
-                    <div v-if="!loginState">
+                    <div v-if="!info.loginState">
                         <img @click="loginDialogIsVisible = true" src="../img/login.jpg" alt="" />
                         <span>点击头像登录</span>
                     </div>
@@ -97,10 +95,57 @@
 
 <script setup>
 
+import { reactive ,ref} from 'vue';
+import { useRouter } from 'vue-router';
+
+let timer
+
+const router = useRouter()
+const info = reactive({
+    isSearchPopShow: false,
+
+})
+const keywords = ref('')
+
+const toSearch = async () => {
+      window.sessionStorage.setItem('keywords', keywords.value)
+     
+    }
+    const keywordsChange = () => {
+      clearTimeout(timer)
+      if (keywords.value !== '') {
+        timer = setTimeout(() => {
+          getSearchSuggest(keywords.value)
+        }, 100)
+      } else {
+        info.searchSuggestList = {}
+        return
+      }
+    }
 
 </script>
 
 <style lang="scss" scoped>
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  border: none;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
 .el-header {
     padding: 0;
     width: 100vw;

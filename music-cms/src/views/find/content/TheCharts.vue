@@ -1,15 +1,15 @@
 <template>
     <div>
         <div class="official">
-            <p class="title" v-if="official.length">官方榜</p>
-            <div class="list" v-for="(t, index) in official" :key="index">
+            <p class="title" v-if="info.official.length">官方榜</p>
+            <div class="list" v-for="(t, index) in info.official" :key="index">
                 <el-image :src="t.coverImgUrl" alt="">
                     <div slot="placeholder" class="image-slot">
-                        <img src="../../../assets/images/loading.png" />
+                        <img src="../../../img/loading.png" />
                     </div>
                 </el-image>
                 <div class="songInfo">
-                    <el-table :data="officialSongs[index]" style="width: 100%" :show-header="false" height="195px"
+                    <el-table :data="info.officialSongs[index]" style="width: 100%" :show-header="false" height="195px"
                         size="mini" empty-text="Loading . . . . . ." @row-dblclick="toPlaylistDetails(t.id)">
                         <el-table-column type="index" align="left" width="30">
                         </el-table-column>
@@ -37,13 +37,13 @@
         </div>
 
         <div class="global">
-            <p class="title" v-if="global.length">全球榜</p>
+            <p class="title" v-if="info.global.length">全球榜</p>
             <div class="typeResult">
                 <ul class="lists">
-                    <li class="list" v-for="(g, index) in global" :key="index" @click="toPlaylistDetails(g.id)">
+                    <li class="list" v-for="(g, index) in info.global" :key="index" @click="toPlaylistDetails(g.id)">
                         <el-image :src="g.coverImgUrl" alt="">
                             <div slot="placeholder" class="image-slot">
-                                <img src="../../../assets/images/loading.png" />
+                                <img src="../../../img/loading.png" />
                             </div>
                         </el-image>
                         <p class="title">{{ g.name }}</p>
@@ -68,13 +68,27 @@ const info = reactive({
 })
 
 const getOfficial = async () => {
-    let res = await  topList()
+    let res = await topList()
     info.official = res.data.list.slice(0,4)
     for(let i=0 ; i < info.official.length ;i++){
         let id= info.official[i].id
-        
+        getPlaylistDetails(id)
     }
 }
+const getPlaylistDetails = async (id) =>{
+    let res = await playlistDetails(id)
+    let songs = res.data.playlist.tracks.slice(0,5)
+    info.officialSongs.push(songs)
+}
+
+// const toPlaylistDetails = (id) => {
+//   router.push({
+//     name:'findSingerel',
+//     params: { id }
+//   })
+// }
+
+getOfficial()
 </script>
 
 <style lang="scss" scoped>

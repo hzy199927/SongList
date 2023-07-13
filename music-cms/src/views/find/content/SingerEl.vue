@@ -8,10 +8,10 @@
             <div class="introduce">
                 <div class="name">{{ info.singerInfo.name }}</div>
                 <div class="operate">
-                    <div :class="{ like: true, subscribed }" @click="toSubSinger">
-                        <i v-if="!subscribed" class="iconfont">&#xe604;</i>
-                        <i v-if="subscribed" class="iconfont">&#xe612;</i>
-                        {{ subscribed ? '已收藏' : '收藏' }}
+                    <div :class="{ like: true,subscribed:info.subscribed }" @click="toSubSinger">
+                        <i v-if="!info.subscribed" class="iconfont">&#xe604;</i>
+                        <i v-if="info.subscribed" class="iconfont">&#xe612;</i>
+                        {{ info.subscribed ? '已收藏' : '收藏' }}
                     </div>
                     <div class="home">
                         <i class="iconfont">&#xe606;</i>
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="singerContent">
-            <el-tabs v-model="selectTag">
+            <el-tabs v-model="info.selectTag">
                 <el-tab-pane label="专辑" name="collection">
                     <div class="hotSongs">
                         <div class="cover">
@@ -34,9 +34,9 @@
                         </div>
                         <div class="songs">
                             <div class="title">热门 50 首</div>
-                            <el-table :data="singerHotSongs" style="width: 100%" :show-header="false" size="mini"
-                                :max-height="maxHeight" :scrollbar-always-on="true" empty-text="Loading . . . . . ."
-                                @row-dblclick="playSong(singerHotSongs)">
+                            <el-table :data="info.singerHotSongs" style="width: 100%" :show-header="false" size="mini"
+                                :max-height="info.maxHeight" :scrollbar-always-on="true" empty-text="Loading . . . . . ."
+                                @row-dblclick="playSong(info.singerHotSongs)">
                                 <el-table-column type="index" align="left" min-width="40">
                                 </el-table-column>
                                 <el-table-column prop="name" label="歌名" min-width="500" align="left">
@@ -56,7 +56,7 @@
                                 </el-table-column>
                             </el-table>
                             <!-- 查看更多 -->
-                            <div class="seeMore" v-if="maxHeight === 390" @click="changeMaxHeight">
+                            <div class="seeMore" v-if="info.maxHeight === 390" @click="changeMaxHeight">
                                 查看更多
                             </div>
                         </div>
@@ -97,12 +97,12 @@
                 </el-tab-pane>
                 <el-tab-pane label="MV" name="mv">
                     <ul class="lists infinite-list" :v-infinite-scroll="lazyLoading">
-                        <li class="list" v-for="(v, index) in info.singerMV.slice(0, time * 20)" :key="index"
+                        <li class="list" v-for="(v, index) in info.singerMV.slice(0, info.time * 20)" :key="index"
                             @click="toVideoDetails(v.id, v.type)">
                             <div class="cover">
                                 <el-image :src="v.imgurl" alt="" class="video">
                                     <div slot="placeholder" class="image-slot">
-                                        <img src="../../assets/images/loading.png" />
+                                        <img src="../../../img/loading.png" />
                                     </div>
                                 </el-image>
                                 <div class="playCount">
@@ -117,7 +117,7 @@
                             <p class="title">{{ v.name }}</p>
                         </li>
                     </ul>
-                    <div class="noData" v-if="!singerMV.length">暂无数据</div>
+                    <div class="noData" v-if="!info.singerMV.length">暂无数据</div>
                 </el-tab-pane>
                 <el-tab-pane label="歌手详细" name="details">
                     <div class="singerDetail">{{ info.singerInfo.briefDesc }}</div>
@@ -143,7 +143,7 @@ import {
 } from '@/api'
 import { reactive, toRefs, computed, watch ,onMounted } from 'vue'
 
-import { useStore } from 'vuex'
+// import { useStore } from 'vuex'
 import {
     millisecondToMinute,
     millisecondToMinuteArr,
@@ -153,7 +153,7 @@ import { useRouter, useRoute } from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()
-const store = useStore()
+// const store = useStore()
 
 const id = computed({
     get() {
@@ -182,19 +182,19 @@ const getSingerDetails = async () => {
     let res = await singerDetails(id.value)
    
     info.singerInfo = res.data.data.artist
-    console.log(res)
 }
 getSingerDetails()
 
 const getSingerHotSongs = async () => {
     let res = await hotSongs(id.value)
-    millisecondToMinuteArr(res.hotSongs, 'dt')
-    for (let i = 0; i < res.hotSongs.length; i++) {
-        getSongsUrlToPush(res.hotSongs[i])
+    millisecondToMinuteArr(res.data.hotSongs, 'dt')
+    for (let i = 0; i < res.data.hotSongs.length; i++) {
+        getSongsUrlToPush(res.data.hotSongs[i])
     }
-    info.singerHotSongs = res.hotSongs
+    info.singerHotSongs = res.data.hotSongs
+    
 }
-getSingerHotSongs()
+
 
 
 const getSingerCollections = async () => {
@@ -224,24 +224,22 @@ const getCollectionDetails = async (idArr) => {
 
 const getSingerMV = async () => {
     let res = await singerMV(id.value, info.time * 20)
-    info.isMoreMV = res.hasMore
-    info.singerMV = res.mvs
+    info.isMoreMV = res.data.hasMore
+    info.singerMV = res.data.mvs
 }
 const getSongsUrlToPush = async (target) => {
     let res = await songUrl(target.id)
-    target.url = res.data[0].url
+    
+    target.url = res.data.data[0].url
 }
 
 const getSubscribed = async (hint) => {
     let res = await getSubSinger()
     let subIds = []
 
-    console.log(res)
-
     res.data.forEach((el) => {
         subIds.push(el.id)
     })
-
     if (subIds.indexOf(id.value * 1) !== -1) {
         info.subscribed = true
         if (hint) {
@@ -319,7 +317,7 @@ const lazyLoading = () => {
 }
 
 
-
+getSingerHotSongs()
 
 
 

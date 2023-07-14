@@ -2,6 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import store from './store'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 
@@ -22,6 +23,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   }
 app.use(pinia)
 app.use(router)
+app.use(store) //挂载vuex
 app.use(ElementPlus)
 
 app.mount('#app')

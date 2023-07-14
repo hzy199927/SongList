@@ -130,13 +130,14 @@
 
 import { reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { ArrowDown } from '@element-plus/icons-vue'
 let timer
 
 const router = useRouter()
 const info = reactive({
+    music : '' ,
     isSearchPopShow: false,
-    circulationType: 0
+    circulationType: 0,
+    currentTime:'00:00',
 })
 const keywords = ref('')
 
@@ -160,7 +161,19 @@ const changeCirculationType = () => {
     info.circulationType = info.circulationType < 2 ? ++info.circulationType : 0
 }
 
-ArrowDown
+
+const changePlayState = () => {
+    if ( songUrl.value) {
+        store.commit ('changeSongPlayState' , val)
+    }else {
+        ElMessage({
+            message:'暂无可播放的歌曲',
+            type:'warning',
+            grouping: true,
+        })
+    }
+}
+
 </script>
 
 <style lang="scss" scoped>

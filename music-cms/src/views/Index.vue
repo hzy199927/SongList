@@ -6,8 +6,8 @@
                     <img src="../img/logo.png" alt="">
                 </div>
                 <div class="music-header-two">
-                    <el-button icon="ArrowLeft" circle @click="router.back()"/>
-                    <el-button icon="ArrowRight" circle @click="router.forward()"/>
+                    <el-button icon="ArrowLeft" circle @click="router.back()" />
+                    <el-button icon="ArrowRight" circle @click="router.forward()" />
                 </div>
                 <div class="music-header-int">
                     <el-popover v-model="info.isSearchPopShow" popper-class="searchPop" trigger="click" hide-after="50">
@@ -35,9 +35,7 @@
                     <el-row class="tac">
                         <el-col :span="24">
                             <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen"
-                                @close="handleClose"
-                                :default-openeds="['/index',]" router
-                                >
+                                @close="handleClose" :default-openeds="['/index',]" router>
 
                                 <el-menu-item index="/">
                                     <el-icon>
@@ -57,17 +55,17 @@
                                     </el-icon>
                                     收藏
                                 </el-menu-item>
-                                
+
                             </el-menu>
                         </el-col>
                     </el-row>
                 </el-aside>
             </div>
 
-           <el-main>
-            
+            <el-main>
+
                 <RouterView />
-           </el-main>
+            </el-main>
         </el-container>
         <el-footer>
             <div class="music-footer-all">
@@ -80,8 +78,43 @@
                         </div>
                         <div class="music-footer-text">暂无歌曲</div>
                     </el-col>
-                    <el-col :span="12">
+                    <el-col :span="16">
                         <div class="grid-content ep-bg-purple" />
+
+                        <div class="footerBar_center">
+                            <div class="control">
+                                <div class="playType" @click="changeCirculationType">
+                                    <i v-if="!circulationType" class="iconfont">&#xe69a;</i>
+                                    <i v-if="circulationType === 1" class="iconfont">&#xe603;</i>
+                                    <i v-if="circulationType === 2" class="iconfont">&#xe66d;</i>
+                                </div>
+                                <!-- 切换到上一首 -->
+                                <div class="previous" @click="prev">
+                                    <i class="iconfont">&#xe76e;</i>
+                                </div>
+                                <!-- 播放或者暂停 -->
+                                <div class="isPlay" @click="changePlayState(!playState)">
+                                    <i class="iconfont" v-show="!playState">&#xe62b;</i>
+                                    <i class="iconfont" v-show="playState">&#xe87a;</i>
+                                </div>
+                                <!-- 切换到下一首 -->
+                                <div class="next" @click="next">
+                                    <i class="iconfont">&#xe76d;</i>
+                                </div>
+                                <!-- 我喜欢 -->
+                                <div class="like">
+                                    <i class="iconfont">&#xe8ab;</i>
+                                </div>
+                            </div>
+                            <!-- 进度条 -->
+                            <div class="schedule">
+                                <div class="currentTime">{{ currentTime }}</div>
+                                <el-slider v-model="currentDuration" :max="allDuration" @change="changeMusicDuration"
+                                    @click="clickSongSlider(currentDuration)" :show-tooltip="false" />
+                                <div class="endTime">{{ endTime }}</div>
+                            </div>
+                        </div>
+
 
                     </el-col>
                     <el-col :span="4">
@@ -95,55 +128,73 @@
 
 <script setup>
 
-import { reactive ,ref} from 'vue';
+import { reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
-
 let timer
 
 const router = useRouter()
 const info = reactive({
+    music : '' ,
     isSearchPopShow: false,
-
+    circulationType: 0,
+    currentTime:'00:00',
 })
 const keywords = ref('')
 
 const toSearch = async () => {
-      window.sessionStorage.setItem('keywords', keywords.value)
-     
-    }
-    const keywordsChange = () => {
-      clearTimeout(timer)
-      if (keywords.value !== '') {
+    window.sessionStorage.setItem('keywords', keywords.value)
+
+}
+const keywordsChange = () => {
+    clearTimeout(timer)
+    if (keywords.value !== '') {
         timer = setTimeout(() => {
-          getSearchSuggest(keywords.value)
+            getSearchSuggest(keywords.value)
         }, 100)
-      } else {
+    } else {
         info.searchSuggestList = {}
         return
-      }
     }
+}
+
+const changeCirculationType = () => {
+    info.circulationType = info.circulationType < 2 ? ++info.circulationType : 0
+}
+
+
+const changePlayState = () => {
+    if ( songUrl.value) {
+        store.commit ('changeSongPlayState' , val)
+    }else {
+        ElMessage({
+            message:'暂无可播放的歌曲',
+            type:'warning',
+            grouping: true,
+        })
+    }
+}
 
 </script>
 
 <style lang="scss" scoped>
 * {
-  margin: 0;
-  padding: 0;
-  user-select: none;
+    margin: 0;
+    padding: 0;
+    user-select: none;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
 img {
-  vertical-align: top;
-  border: none;
+    vertical-align: top;
+    border: none;
 }
 
 a {
-  color: #000000;
-  text-decoration: none;
+    color: #000000;
+    text-decoration: none;
 }
 
 .el-header {
@@ -284,13 +335,76 @@ a {
     width: calc(100vw - 300px);
     display: flex;
 }
-.nav-music{
+
+.nav-music {
     min-width: calc(100vw - 200px);
 }
-.el-nav{
-width:  calc(100vw - 300px);
+
+.el-nav {
+    width: calc(100vw - 300px);
 }
-.el-main {height: calc(100vh - 120px);}
+
+.el-main {
+    height: calc(100vh - 120px);
+}
+
+.footerBar_center {
+    height: 100%;
+
+    &>.control {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 120px;
+        margin: 5px 0 0 0;
+        box-sizing: border-box;
+
+        i {
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .playType {
+            i {
+                font-size: 15px;
+            }
+        }
+
+        .previous,
+        .next {
+            i {
+                font-size: 25px;
+            }
+        }
+
+        .isPlay {
+            i {
+                font-size: 30px;
+            }
+        }
+
+        .like {
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+
+    &>.schedule {
+        display: flex;
+        align-items: center;
+
+        .el-slider {
+            width: 380px;
+        }
+
+        .currentTime,
+        .endTime {
+            font-size: 13px;
+            margin: 0 10px;
+            color: #888;
+        }
+    }
+}
 </style>
 
 
